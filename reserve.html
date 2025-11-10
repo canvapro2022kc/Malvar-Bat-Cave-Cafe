@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserve a Table | Malvar Cave Café</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="reserve.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Sans:wght@300;400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar sticky">
+    <div class="logo">
+      <i class="fa-solid fa-mug-saucer"></i>
+      <div class="logo-text">
+        <span>Malvar Cave</span>
+        <span>Café</span>
+      </div>
+    </div>
+    <div class="navigation">
+      <a href="index.html">Home</a>
+      <a href="#">Menu</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Reservation Section -->
+  <section class="reservation">
+    <h1 class="main-heading">Reserve Your Table</h1>
+    <p class="reserve-subtext">
+      Plan your perfect café moment. Choose your date, time, and extras — we’ll handle the rest.
+    </p>
+
+    <form class="reserve-form" id="reserveForm">
+      <div class="input-group">
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Last Name" required>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="text" id="phone" placeholder="Phone Number" pattern="^09\\d{9}$" title="Enter a valid PH phone number (e.g., 09123456789)" required>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="studentId" placeholder="Student ID" pattern="^[A-Z0-9-]+$" title="Only letters, numbers, and dashes allowed" required>
+      </div>
+
+      <div class="input-group">
+        <input type="date" id="date" required>
+        <input type="time" id="startTime" min="13:00" max="23:59" required>
+      </div>
+      <small class="note">Operating Hours: 1:00 PM – 1:00 AM</small>
+
+      <div class="input-group">
+        <input type="number" id="hours" placeholder="Number of Hours" min="1" required>
+      </div>
+
+      <div class="equipment-options">
+        <label><input type="checkbox" id="projector"> Projector (₱150/hour)</label><br>
+        <label><input type="checkbox" id="speaker"> Speaker &amp; Mic (₱150/hour)</label>
+      </div>
+
+      <button type="button" class="menu-btn" id="calculateBtn">Calculate Cost</button>
+
+      <div id="estimateContainer" class="estimate-container"></div>
+
+      <button type="submit" class="menu-btn" id="submitBtn" disabled>Submit Reservation</button>
+    </form>
+
+    <div id="confirmationMessage" class="confirmation-message"></div>
+
+    <a href="index.html" class="back-home">
+      <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p class="copyright">&copy; 2025 Malvar Cave Café. All Rights Reserved.</p>
+  </footer>
+
+  <script src="reserve.js"></script>
+</body>
+</html>

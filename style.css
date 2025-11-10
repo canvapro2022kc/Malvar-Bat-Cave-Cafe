@@ -641,6 +641,18 @@ textarea::-webkit-scrollbar {
 }
 /* End of Contact */
 
+.reserve-btn {
+  margin-top: 1.5rem;
+  border-color: #fff;
+  color: #fff;
+}
+
+.reserve-btn:hover {
+  background-color: #fff;
+  color: #2a2727;
+  border-color: #fff;
+}
+
 /* Footer */
 footer {
   width: 100%;
