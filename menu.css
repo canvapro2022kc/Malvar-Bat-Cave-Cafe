@@ -1,0 +1,75 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #2b2b2b;
+  color: #333;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+.menu-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px;
+}
+
+.menu-item {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.menu-item h3 {
+  color: #4e342e;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.menu-item p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.price {
+  display: inline-block;
+  background: #6d4c41;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Responsive for phones */
+@media (max-width: 768px) {
+  .menu-table, tr, td {
+    display: block;
+    width: 100%;
+  }
+
+  td {
+    margin-bottom: 20px;
+  }
+}
