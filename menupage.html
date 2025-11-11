@@ -4,9 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coffee Menu</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Sans:wght@300;400;700&family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
 </head>
 <body>
+    <!-- Navigation -->
+  <nav class="navbar sticky">
+    <div class="logo">
+      <i class="fa-solid fa-mug-saucer"></i>
+      <div class="logo-text">
+        <span>Malvar BAT </span>
+        <span>Cave Café</span>
+      </div>
+    </div>
+    <div class="navigation">
+      <a href="index.html">Home</a>
+      <a href="menupage.html">Menu</a>
+      <a href="reserve.html">Book</a>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
 
 <h1>SNACKS</h1>
     <table class="menu-table">
@@ -16,8 +50,9 @@
           <img src="https://i.pinimg.com/736x/7b/82/ee/7b82eea5a8246bad61701098dbe54b32.jpg" 
           alt="Nachos">
           <h3>Nachos Grande</h3>
-          <p>Crispy nachos topped with melted cheese, savory beef, and zesty salsa.</p>
+          <p>Nachos with melted cheese, savory beef, and zesty salsa.</p>
           <div class="price">₱120</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -28,6 +63,7 @@
           <h3>Cheesy Fries</h3>
           <p>Golden fries drizzled with creamy cheese sauce.</p>
           <div class="price">₱90</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -38,6 +74,7 @@
           <h3>Club Sandwich</h3>
           <p>Layers of ham, egg, and veggies in toasted bread.</p>
           <div class="price">₱110</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
     </tr>
@@ -50,6 +87,7 @@
           <h3>Ham and Cheese Sandwich</h3>
           <p>Toasted sandwich filled with tuna and melted cheese.</p>
           <div class="price">₱95</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -60,6 +98,7 @@
           <h3>Chicken Quesadilla</h3>
           <p>Grilled tortilla stuffed with chicken and cheese.</p>
           <div class="price">₱130</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -70,6 +109,7 @@
           <h3>Mozzarella Sticks</h3>
           <p>Crispy sticks with gooey mozzarella inside.</p>
           <div class="price">115</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
     </tr>
@@ -86,6 +126,7 @@
           <h3> The Bat Brew </h3>
           <p>Strong and rich shot of pure coffee, perfect for a quick boost.</p>
           <div class="price">₱120</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -96,6 +137,7 @@
           <h3>Midnight Mocha</h3>
           <p>Espresso mixed with steamed milk and topped with creamy foam.</p>
           <div class="price">₱135</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -106,6 +148,7 @@
           <h3>Caramel Latte</h3>
           <p>Smooth blend of espresso, milk, and caramel syrup for a sweet touch.</p>
           <div class="price">₱140</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
     </tr>
@@ -118,6 +161,7 @@
           <h3>Mocha</h3>
           <p>A perfect mix of coffee and chocolate topped with whipped cream.</p>
           <div class="price">₱150</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -128,6 +172,7 @@
           <h3>Iced Americano</h3>
           <p>Refreshing cold espresso with water served over ice.</p>
           <div class="price">₱100</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -138,6 +183,7 @@
           <h3>Cold Brew</h3>
           <p>Slow-brewed coffee with a smooth, less acidic taste.</p>
           <div class="price">₱130</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
     </tr>
@@ -153,6 +199,7 @@
           <h3>Red Velvet Muffin</h3>
           <p>A soft red velvet muffin with a hint of cocoa and creamy sweetness.</p>
           <div class="price">₱65</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -163,6 +210,7 @@
           <h3>Blueberry Muffin</h3>
           <p>Soft, buttery muffin bursting with juicy blueberries.</p>
           <div class="price">₱85</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -173,6 +221,7 @@
           <h3>Cinnamon Roll</h3>
           <p>Warm, fluffy roll swirled with cinnamon and topped with glaze.</p>
           <div class="price">₱100</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
     </tr>
@@ -185,6 +234,7 @@
           <h3>Chocolate Croissant</h3>
           <p>Flaky pastry filled with rich, smooth chocolate.</p>
           <div class="price">₱95</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -195,6 +245,7 @@
           <h3>Cheese Ensaymada</h3>
           <p>Soft, buttery bread topped with cheese and sugar.</p>
           <div class="price">₱75</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
 
@@ -205,6 +256,7 @@
           <h3>Banana Loaf Slice</h3>
           <p>Moist banana bread with a classic sweet aroma.</p>
           <div class="price">₱80</div>
+          <button class="add-to-cart">🛒</button>
         </div>
       </td>
     </tr>
