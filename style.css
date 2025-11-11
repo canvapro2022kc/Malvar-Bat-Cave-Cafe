@@ -13,6 +13,19 @@ html {
 }
 /* End of Default Styles */
 
+body {
+  background-color: #222; /* default dark background */
+  color: white;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* Light theme */
+.light-theme {
+  background-color: #D6CFCB;
+  color: #222;
+}
+
 /* Container */
 .container {
   width: 100%;

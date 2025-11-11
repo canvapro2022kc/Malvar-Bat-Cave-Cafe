@@ -39,3 +39,4 @@ const startCount = (el) => {
     }
   }, 2000 / nums);
 };
+
