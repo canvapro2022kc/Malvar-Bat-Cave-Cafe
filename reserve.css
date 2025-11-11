@@ -85,7 +85,7 @@ body {
     background-color: #c49b63;
     color: #222;
   }
-  
+
   .equipment-options {
     margin-top: 2rem;
     text-align: left;
@@ -136,3 +136,51 @@ body {
     color: #fff;
   }
   
+
+/* ===== Booking Rates Table ===== */
+.rates-section {
+  margin-top: 5rem;
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
+}
+
+.rates-heading {
+  color: #c49b63;
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.rates-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #c49b63;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.rates-table th,
+.rates-table td {
+  border-bottom: 1px solid #444;
+  padding: 1.2rem;
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.rates-table th {
+  background-color: rgba(196, 155, 99, 0.2);
+  color: #c49b63;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rates-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rates-table tr:hover {
+  background-color: rgba(196, 155, 99, 0.1);
+  transition: 0.3s;
+}

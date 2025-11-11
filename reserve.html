@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <!-- Navigation -->
   <nav class="navbar sticky">
     <div class="logo">
       <i class="fa-solid fa-mug-saucer"></i>
@@ -21,11 +22,8 @@
     </div>
     <div class="navigation">
       <a href="index.html">Home</a>
-      <a href="#">Menu</a>
-      <a href="#">Blog</a>
-      <a href="#">About</a>
-      <a href="#">Shop</a>
-      <a href="#">Contact</a>
+      <a href="menupage.html">Menu</a>
+      <a href="reserve.html">Book</a>
     </div>
   </nav>
 
@@ -35,6 +33,37 @@
     <p class="reserve-subtext">
       Plan your perfect café moment. Choose your date, time, and extras — we’ll handle the rest.
     </p>
+
+    <!-- Booking Rates Table -->
+    <div class="rates-section">
+      <h2 class="rates-heading">📋 Booking Rates</h2>
+      <table class="rates-table">
+        <thead>
+          <tr>
+            <th>Booking Rate Detail</th>
+            <th>Price (PHP)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Base Hourly Rate</td>
+            <td>₱50.00 / hour</td>
+          </tr>
+          <tr>
+            <td>Minimum Fee</td>
+            <td>₱75.00 (Charged if booking is less than 2 hours)</td>
+          </tr>
+          <tr>
+            <td>Equipment Fee - Projector</td>
+            <td>₱150.00 / hour</td>
+          </tr>
+          <tr>
+            <td>Equipment Fee - Speaker &amp; Mic</td>
+            <td>₱150.00 / hour</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <form class="reserve-form" id="reserveForm">
       <div class="input-group">
@@ -66,14 +95,13 @@
         <label><input type="checkbox" id="speaker"> Speaker &amp; Mic (₱150/hour)</label>
       </div>
 
-      <button type="button" class="menu-btn" id="calculateBtn">Calculate Cost</button>
-
-      <div id="estimateContainer" class="estimate-container"></div>
-
-      <button type="submit" class="menu-btn" id="submitBtn" disabled>Submit Reservation</button>
-    </form>
+      <div class="button-group">
+        <button type="button" class="menu-btn" id="calculateBtn">Calculate Cost</button>
+        <button type="submit" class="menu-btn" id="submitBtn" disabled>Submit Reservation</button>
+      </div>
 
     <div id="confirmationMessage" class="confirmation-message"></div>
+    </form>
 
     <a href="index.html" class="back-home">
       <i class="fa-solid fa-arrow-left"></i> Back to Home
