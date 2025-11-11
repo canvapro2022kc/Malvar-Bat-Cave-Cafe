@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | Malvar Cave Café</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<body>
+  <nav class="admin-nav">
+    <h1>☕ Malvar Cave Café — Admin Panel</h1>
+    <button id="logoutBtn">Logout</button>
+  </nav>
+
+  <main class="admin-container">
+    <div class="tabs">
+      <button class="tab active" data-tab="menu">Menu</button>
+      <button class="tab" data-tab="equipments">Equipments</button>
+      <button class="tab" data-tab="reservations">Reservations</button>
+    </div>
+
+    <!-- MENU MANAGEMENT -->
+    <section id="menu" class="tab-content active">
+      <h2>Menu Management</h2>
+      <form id="menuForm">
+        <input type="text" id="menuName" placeholder="Item Name" required>
+        <input type="number" id="menuPrice" placeholder="Price (PHP)" required>
+        <select id="menuCategory">
+          <option value="Specialty Coffee">Specialty Coffee</option>
+          <option value="Pastries">Pastries</option>
+          <option value="Snacks">Snacks</option>
+        </select>
+        <button type="submit">Add Item</button>
+      </form>
+      <ul id="menuList"></ul>
+    </section>
+
+    <!-- EQUIPMENT MANAGEMENT -->
+    <section id="equipments" class="tab-content">
+      <h2>Equipment Management</h2>
+      <form id="equipForm">
+        <input type="text" id="equipName" placeholder="Equipment Name" required>
+        <input type="number" id="equipRate" placeholder="Hourly Rate (PHP)" required>
+        <button type="submit">Add Equipment</button>
+      </form>
+      <ul id="equipList"></ul>
+    </section>
+
+    <!-- RESERVATION MANAGEMENT -->
+    <section id="reservations" class="tab-content">
+      <h2>Reservation Requests</h2>
+      <ul id="reservationList"></ul>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -67,28 +67,46 @@ document.addEventListener("DOMContentLoaded", () => {
   
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-  
+    
       const email = document.getElementById("email");
       const phone = document.getElementById("phone");
       const studentId = document.getElementById("studentId");
-  
+      const date = document.getElementById("date").value;
+      const startTime = document.getElementById("startTime").value;
+      const hours = document.getElementById("hours").value;
+      const guests = document.getElementById("guests").value;
+    
       if (!email.checkValidity() || !phone.checkValidity() || !studentId.checkValidity()) {
         alert("Please fill out all fields correctly before submitting.");
         return;
       }
-  
+    
+      // Save reservation to localStorage for admin
+      let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
+      reservations.push({
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
+        email: email.value,
+        phone: phone.value,
+        studentId: studentId.value,
+        date,
+        startTime,
+        hours,
+        guests,
+        status: "Pending"
+      });
+      localStorage.setItem("reservations", JSON.stringify(reservations));
+    
       confirmationMessage.style.display = "block";
-      confirmationMessage.textContent =
-        `Reservation Confirmed! 🎉\nEstimated Fee: ₱${estimatedCost.toFixed(2)}\n` +
-        `Ends at: ${endTimeFormatted}`;
-  
+      confirmationMessage.textContent = `Reservation Request Sent! Awaiting admin approval. Estimated Fee: ₱${estimatedCost.toFixed(2)} (Ends at ${endTimeFormatted})`;
+    
       form.reset();
       estimateContainer.style.display = "none";
       submitBtn.disabled = true;
-  
+    
       setTimeout(() => {
         confirmationMessage.style.display = "none";
       }, 7000);
-    });
+    });    
   });
   
