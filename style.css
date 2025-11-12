@@ -107,7 +107,6 @@ body {
   gap: 2rem;
 }
 
-
 .navigation a {
   font-size: 1.8rem;
   text-transform: uppercase;
@@ -693,8 +692,7 @@ body.light-theme {
 
 /* Navbar */
 body.light-theme .navbar {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ccc;
+  background-color: #c9b8b0;
 }
 
 body.light-theme .navbar .logo-text span,
