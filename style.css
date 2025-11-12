@@ -26,6 +26,18 @@ body {
   color: #222;
 }
 
+.logo-icon {
+  height: 50px;       
+  width: auto;
+  margin-right: 1rem; 
+  align-items: center;
+}
+
+.logo-img {
+  height: 20rem;   /* adjust as needed */
+  width: auto;
+}
+
 /* Container */
 .container {
   width: 100%;
@@ -67,9 +79,10 @@ body {
 }
 
 .logo-text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+  display: flex;          /* horizontal layout */
+  flex-direction: row;    /* optional, default is row */
+  align-items: center;    /* vertically align icon and logo-img */
+  gap: 1rem;              /* space between icon and logo-img */
 }
 
 .logo-text span:nth-child(1) {
@@ -91,7 +104,9 @@ body {
   display: flex;
   align-items: center;
   margin-left: 90rem;
+  gap: 2rem;
 }
+
 
 .navigation a {
   font-size: 1.8rem;
