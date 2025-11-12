@@ -39,12 +39,11 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 300;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 0.1rem solid rgba(55, 54, 54, 0.1);
-  z-index: 300;
   transition: all 0.5s;
 }
 
@@ -57,6 +56,7 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-left: 10rem;
 }
 
 .logo i {
@@ -87,14 +87,21 @@ body {
   margin-top: -0.7rem;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-left: 90rem;
+}
+
 .navigation a {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   color: #eee;
   margin-right: 3rem;
   letter-spacing: 0.2rem;
   position: relative;
   transition: color 0.3s;
+  margin-left: 40px;
 }
 
 .navigation a:hover {
@@ -105,25 +112,6 @@ body {
   color: #c49b63;
 }
 
-.navigation a:last-child {
-  font-size: 1.8rem;
-}
-
-.navigation a:last-child::after {
-  content: "1";
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: #ffc107;
-  border-radius: 50%;
-  position: absolute;
-  top: -1.5rem;
-  left: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #222;
-  font-size: 1.2rem;
-}
 /* End of Navigation */
 
 /* Landing */
@@ -775,6 +763,38 @@ body.light-theme footer {
 body, .navbar, .landing, .about, .menu, footer {
   transition: background-color 0.6s ease, color 0.6s ease, background 0.6s ease;
 }
+
+/* ===== THEME TOGGLE BUTTON ===== */
+#themeToggle {
+  background: transparent;
+  color: #c49b63;
+  border: 1px solid #c49b63;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 2rem; /* space between toggle and first link */
+}
+
+#themeToggle:hover {
+  background: #c49b63;
+  color: #222;
+}
+
+/* Light mode variation */
+body.light-theme #themeToggle {
+  color: #fff;
+  border-color: #fff;
+}
+
+body.light-theme #themeToggle:hover {
+  background: #fff;
+  color: #c49b63;
+}
+
+
 
 /* Responsive */
 @media (max-width: 1500px) {

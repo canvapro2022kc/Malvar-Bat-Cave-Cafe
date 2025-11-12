@@ -102,3 +102,139 @@ body {
   .decline { color: #ff4444; }
   .archive { color: #ffb300; }
   
+  /* ===== NAVBAR ACTION BUTTONS ===== */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#themeToggle {
+  background: transparent;
+  color: #c49b63;
+  border: 1px solid #c49b63;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#themeToggle:hover {
+  background: #c49b63;
+  color: #222;
+}
+
+/* Light theme overrides for the toggle */
+body.light-theme #themeToggle {
+  color: #fff;
+  border-color: #fff;
+}
+
+body.light-theme #themeToggle:hover {
+  background: #fff;
+  color: #c49b63;
+}
+
+/* ===== LIGHT THEME STYLES ===== */
+body.light-theme {
+  background-color: #f7f3f1;
+  color: #222;
+}
+
+/* Navbar */
+body.light-theme .admin-nav {
+  background-color: #fff;
+  color: #222;
+  border-bottom: 2px solid #c49b63;
+}
+
+body.light-theme .admin-nav h1 {
+  color: #c49b63;
+}
+
+body.light-theme #logoutBtn {
+  background: #c49b63;
+  color: #fff;
+}
+
+.logout{
+  margin-left: 75rem;
+}
+
+/* Tabs */
+body.light-theme .tabs .tab {
+  background: #fff;
+  border: 1px solid #c49b63;
+  color: #222;
+}
+
+body.light-theme .tab.active {
+  background: #c49b63;
+  color: #fff;
+}
+
+/* Forms and Inputs */
+body.light-theme input,
+body.light-theme select {
+  background-color: #fff;
+  border: 1px solid #c49b63;
+  color: #222;
+}
+
+body.light-theme button {
+  background: #c49b63;
+  color: #fff;
+}
+
+/* Lists and Items */
+body.light-theme li {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #c49b63;
+  color: #222;
+}
+
+/* Action Buttons */
+body.light-theme .action-btn {
+  color: #c49b63;
+}
+
+body.light-theme .approve { color: #00b050; }
+body.light-theme .decline { color: #d32f2f; }
+body.light-theme .archive { color: #ff9800; }
+
+/* ===== THEME TOGGLE BUTTON ===== */
+#themeToggle {
+  background: transparent;
+  color: #c49b63;
+  border: 1px solid #c49b63;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 1rem;
+}
+
+#themeToggle:hover {
+  background: #c49b63;
+  color: #222;
+}
+
+/* Light mode variation */
+body.light-theme #themeToggle {
+  color: #fff;
+  border-color: #fff;
+}
+
+body.light-theme #themeToggle:hover {
+  background: #fff;
+  color: #c49b63;
+}
+
+/* Smooth transitions */
+body, .admin-nav, .tab, li, button, input, select {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
