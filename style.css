@@ -26,6 +26,7 @@ body {
   color: #222;
 }
 
+/*FOR CLASS */
 .logo-icon {
   height: 50px;       
   width: auto;
@@ -37,6 +38,7 @@ body {
   height: 20rem;   /* adjust as needed */
   width: auto;
 }
+/*END FOR CLASS */
 
 /* Container */
 .container {
@@ -276,13 +278,13 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 
 .details div span:nth-child(1) {
   font-size: 1.6rem;
-  color: #fff;
+  color: #C9A89F;
   margin-bottom: 0.5rem;
 }
 
 .details div span:nth-child(2) {
   font-size: 1.4rem;
-  color: #bbb;
+  color: #706677;
   width: 30rem;
 }
 /* End of Landing */
@@ -681,6 +683,7 @@ footer {
   font-size: 1.6rem;
   color: #999;
 }
+
 /* End of Footer */
 /* End of Container */
 
@@ -702,6 +705,7 @@ body.light-theme .navigation a {
 body.light-theme .navigation a:hover {
   color: #c49b63;
 }
+
 
 /* Hero / Landing Section */
 body.light-theme .landing {
@@ -744,7 +748,7 @@ body.light-theme .about i {
 
 /* Menu Section */
 body.light-theme .menu {
-  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+  background: linear-gradient(#fffbf9, #c8aea1),
               url(images/image8.jpg) center/cover no-repeat;
 }
 
@@ -758,17 +762,17 @@ body.light-theme .menu-left p {
 
 /* Contact / Footer Section */
 body.light-theme .landing-contact {
-  background-color: #eee;
+  background-color: #f7f3f1;
   color: #222;
 }
 
 body.light-theme .landing-contact i {
-  color: #c49b63;
+  color: #c09b67;
 }
 
 body.light-theme footer {
-  background-color: #f1efed;
-  color: #555;
+  background-color: #f7f3f1;
+  color: #000000;
 }
 
 /* Transitions for smooth change */

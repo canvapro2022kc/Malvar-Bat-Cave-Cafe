@@ -20,7 +20,7 @@ body {
   
   .reserve-subtext {
     font-size: 1.6rem;
-    color: #ccc;
+    color: #B39891;
     width: 60rem;
     margin-top: 1rem;
   }
@@ -44,7 +44,7 @@ body {
     background: transparent;
     border: none;
     border-bottom: 1px solid #c49b63;
-    color: #fff;
+    color: #B39891;
     margin: 1rem 0;
     padding: 1rem;
     font-size: 1.4rem;
@@ -53,7 +53,7 @@ body {
   
   .input-group input::placeholder,
   textarea::placeholder {
-    color: #bbb;
+    color: #B39891;
   }
   
   .note {
@@ -154,9 +154,10 @@ body {
 }
 
 .logo-text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+  display: flex;          /* horizontal layout */
+  flex-direction: row;    /* optional, default is row */
+  align-items: center;    /* vertically align icon and logo-img */
+  gap: 1rem;              /* space between icon and logo-img */
 }
 
 .logo-text span:nth-child(1) {
@@ -233,7 +234,7 @@ body {
 .rates-table {
   width: 100%;
   border-collapse: collapse;
-  color: #fff;
+  color: #B39891;
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid #c49b63;
   border-radius: 10px;
