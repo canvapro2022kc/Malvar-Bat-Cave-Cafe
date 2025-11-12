@@ -26,6 +26,18 @@ body {
   color: #222;
 }
 
+.logo-icon {
+  height: 50px;       
+  width: auto;
+  margin-right: 1rem; 
+  align-items: center;
+}
+
+.logo-img {
+  height: 20rem;   /* adjust as needed */
+  width: auto;
+}
+
 /* Container */
 .container {
   width: 100%;
@@ -67,9 +79,10 @@ body {
 }
 
 .logo-text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+  display: flex;          /* horizontal layout */
+  flex-direction: row;    /* optional, default is row */
+  align-items: center;    /* vertically align icon and logo-img */
+  gap: 1rem;              /* space between icon and logo-img */
 }
 
 .logo-text span:nth-child(1) {
@@ -90,7 +103,12 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   margin-left: 70rem;
+=======
+  margin-left: 90rem;
+  gap: 2rem;
+>>>>>>> f2c4f49a8b4703b4b287b191e50a012a1c2214af
 }
 
 .navigation a {
@@ -678,8 +696,7 @@ body.light-theme {
 
 /* Navbar */
 body.light-theme .navbar {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ccc;
+  background-color: #c9b8b0;
 }
 
 body.light-theme .navbar .logo-text span,
