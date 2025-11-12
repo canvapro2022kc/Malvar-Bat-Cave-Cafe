@@ -1,20 +1,17 @@
-//LIGHT THEME
+// light.js
+const hour = new Date().getHours();
+const body = document.body;
 
-function applyTimeBasedTheme() {
-  const now = new Date();
-  const hour = now.getHours(); // 0-23
-
-  if (hour >= 13 && hour < 18) { // 1 PM to 5:59 PM
-    document.body.classList.add('light-theme');
-  } else {
-    document.body.classList.remove('light-theme');
-  }
+// Auto-switch based on time
+if (hour >= 5 && hour < 18) {
+  body.classList.add("light-theme");
+} else {
+  body.classList.remove("light-theme");
 }
 
-// Run once on page load
-applyTimeBasedTheme();
-
-// Optional: Update theme every minute automatically
-setInterval(applyTimeBasedTheme, 60000);
-
-//END OF CODE FOR LIGHT THEME
+// Optional: Press "L" key to toggle manually
+document.addEventListener("keydown", (e) => {
+  if (e.key.toLowerCase() === "l") {
+    body.classList.toggle("light-theme");
+  }
+});
