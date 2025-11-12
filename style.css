@@ -102,13 +102,8 @@ body {
 
 .nav-right {
   display: flex;
-  align-items: center;
-<<<<<<< HEAD
+  align-items: right;
   margin-left: 70rem;
-=======
-  margin-left: 90rem;
-  gap: 2rem;
->>>>>>> f2c4f49a8b4703b4b287b191e50a012a1c2214af
 }
 
 .navigation a {
