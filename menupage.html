@@ -37,6 +37,18 @@
       <a href="menupage.html">Menu</a>
       <a href="reserve.html">Book</a>
     </div>
+    <div class="cart-container">
+      <button id="cartBtn">🛒<span id="cartCount">0</span></button>
+      <div id="cartDropdown" class="cart-dropdown hidden">
+        <h3>Your Cart</h3>
+        <div id="cartItems">
+          <p class="empty">Your cart is empty.</p>
+        </div>
+        <div id="cartTotal">
+          Total: ₱<span id="totalAmount">0</span>
+        </div>
+      </div>
+    </div>
     </div>
   </nav>
   <br>
@@ -263,6 +275,91 @@
       </td>
     </tr>
   </table>
+
+  <script>
+    const cart = {};
+    const cartItemsContainer = document.getElementById("cartItems");
+    const totalAmountSpan = document.getElementById("totalAmount");
+    const cartBtn = document.getElementById("cartBtn");
+    const cartDropdown = document.getElementById("cartDropdown");
+    const cartCountSpan = document.getElementById("cartCount");
+    
+    function updateCart() {
+      cartItemsContainer.innerHTML = "";
+      let total = 0;
+      let totalItems = 0;
+      const items = Object.values(cart);
+    
+      if(items.length === 0){
+        cartItemsContainer.innerHTML = '<p class="empty">Your cart is empty.</p>';
+      }
+    
+      items.forEach(item => {
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("cart-item");
+        itemDiv.innerHTML = `
+          <p>${item.name} - ₱${item.price}</p>
+          <div class="quantity-controls">
+            <button class="decrease">-</button>
+            <span>${item.quantity}</span>
+            <button class="increase">+</button>
+            <button class="remove">x</button>
+          </div>
+        `;
+        cartItemsContainer.appendChild(itemDiv);
+    
+        total += item.price * item.quantity;
+        totalItems += item.quantity;
+    
+        // Event listeners
+        itemDiv.querySelector(".increase").addEventListener("click", () => {
+          item.quantity++;
+          updateCart();
+        });
+    
+        itemDiv.querySelector(".decrease").addEventListener("click", () => {
+          if(item.quantity > 1){
+            item.quantity--;
+          } else {
+            delete cart[item.id];
+          }
+          updateCart();
+        });
+    
+        itemDiv.querySelector(".remove").addEventListener("click", () => {
+          delete cart[item.id];
+          updateCart();
+        });
+      });
+    
+      totalAmountSpan.textContent = total;
+      cartCountSpan.textContent = totalItems;
+    }
+    
+    // Toggle cart dropdown
+    cartBtn.addEventListener("click", () => {
+      cartDropdown.classList.toggle("hidden");
+    });
+    
+    // Add to cart buttons
+    document.querySelectorAll(".add-to-cart").forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        const menuItem = btn.parentElement;
+        const id = index; // simple ID
+        const name = menuItem.querySelector("h3").innerText;
+        const price = parseInt(menuItem.querySelector(".price").innerText.replace("₱",""));
+    
+        if(cart[id]){
+          cart[id].quantity++;
+        } else {
+          cart[id] = { id, name, price, quantity: 1 };
+        }
+    
+        updateCart();
+      });
+    });
+    </script>
+    
 
     <script src="light.js"></script>
     <script src="admin-key.js"></script>
