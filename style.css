@@ -110,7 +110,8 @@ body {
 .nav-right {
   display: flex;
   align-items: right;
-  margin-left: 70rem;
+  margin-left: auto;
+  gap: 2rem;
 }
 
 .navigation a {
@@ -164,21 +165,22 @@ body {
 
 .banner h1 {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 400;
   text-transform: uppercase;
   color: #fff;
   margin: 2rem 0;
   line-height: 1.5;
   letter-spacing: 0.2rem;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .banner p {
   font-size: 1.5rem;
   font-weight: 300;
   color: #fff;
-  width: 60rem;
+  max-width: 60rem;
+  width: 90%;
   margin: 0 auto 2rem auto;
   letter-spacing: 0.1rem;
 }
@@ -223,9 +225,7 @@ body {
   font-size: 1.5rem; /* optional size */
 }
 
-.swiper-button-prev {
-  margin-left: 2rem; /* distance from left */
-}
+
 
 .swiper-button-next {
   margin-right: 2rem; /* distance from right */
@@ -237,7 +237,7 @@ body {
 }
 
 .swiper-button-prev {
-  left: 2rem; /* distance from left */
+  margin-left: 2rem; /* distance from left */
 }
 
 .swiper-button-next {
@@ -318,7 +318,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 .details div span:nth-child(2) {
   font-size: 1.4rem;
   color: #706677;
-  width: 30rem;
+  max-width: 60rem;
+  width: 90%;
 }
 /* End of Landing */
 
@@ -336,7 +337,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 }
 
 .about div {
-  width: 50rem;
+  max-width: 60rem;
+  width: 90%;
   height: 35rem;
   margin: 0 3rem;
   text-align: center;
@@ -404,7 +406,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 .menu-left p {
   font-size: 1.4rem;
   color: #777;
-  width: 50rem;
+  max-width: 60rem;
+  width: 90%;
   margin: 2rem 0 4rem auto;
   line-height: 1.2;
 }
@@ -433,7 +436,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 }
 
 .menu-right-images {
-  width: 60rem;
+  max-width: 60rem;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -564,6 +568,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
   color: #777;
   margin-top: 4rem;
   line-height: 1.2;
+  max-width: 60rem;
+  width: 90%;
 }
 
 .clients {
@@ -658,7 +664,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 
 .input-group input,
 textarea {
-  width: 30rem;
+  max-width: 40rem;
+  width: 90%;
   height: 5rem;
   padding: 1rem 1rem 2rem 0;
   margin: 2rem;
@@ -683,7 +690,8 @@ textarea::-webkit-scrollbar {
 }
 
 .contact-btn {
-  width: 30rem;
+  max-width: 40rem;
+  width: 90%;
   height: 6rem;
   background-color: #c49b63;
   color: #2a2727;
@@ -741,7 +749,6 @@ body.light-theme .navigation a {
 body.light-theme .navigation a:hover {
   color: #c49b63;
 }
-
 
 /* Hero / Landing Section */
 body.light-theme .landing {
@@ -870,6 +877,7 @@ body.light-theme #themeToggle:hover {
   html {
     font-size: 45%;
   }
+
   .menu-img-wrapper {
     width: 18rem;
     height: 18rem;
@@ -969,23 +977,98 @@ body.light-theme #themeToggle:hover {
     font-size: 35%;
   }
 
-  .landing-contact {
-    height: 19rem;
-    flex-direction: column;
-    align-items: center;
+  /* Banner / Landing */
+  .banner h3.main-heading {
+    font-size: 2.2rem; /* ~7.7px scaled, smaller for mobile */
   }
+
+  .banner button {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    width: auto;
+  }
+
+  .landing-contact {
+    padding-left: 5rem;   /* add space on the left */
+    padding-right: 1.5rem;  /* optional: keep some right padding */
+    gap: 1rem;              /* space between items vertically */
+  }
+
+  .landing-contact .details {
+    gap: 0.4rem !important;          /* spacing between icon and text */
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+
+  .landing-contact .details i {
+    font-size: 2rem !important;    /* smaller icon */
+  }
+
+  .landing-contact .details div p:first-child {
+    font-size: 1.5rem !important;      /* main info text smaller */
+    margin-bottom: 0.2rem !important;
+  }
+
+  .landing-contact .details div p:last-child {
+    font-size: 1.3rem !important;    /* secondary info smaller */
+  }
+
   .details div {
     width: 20rem;
+  }
+
+  .details i {
+    font-size: 10px;
   }
 
   .about {
     height: 80vh;
     flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .about i {
+    font-size: 4rem;
+    width: 6rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .about p {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+
+  /* Menu Section */
+  .menu-left h1 {
+    font-size: 2.8rem;
+    width: 90%;           /* nearly full width */
+    margin: auto;    /* center horizontally */
+    text-align: center;   /* center the text */
+    padding-top: 0.5rem;   /* small horizontal padding */
+  }
+
+  .menu-left p {
+    font-size: 1.4rem;
+    max-width: 30rem; /* ~300px for mobile */
+  }
+
+  /* Footer */
+  footer {
+    font-size: 1.2rem;
+    padding: 2rem 1rem;
   }
 
   .about div {
-    width: 60rem;
-    margin: 0 2rem;
+    width: 90%;
+    max-width: 35rem;
   }
 
   .customers {
@@ -1006,3 +1089,4 @@ body.light-theme #themeToggle:hover {
 }
 
 /* End of Responsive */
+
