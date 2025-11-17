@@ -95,6 +95,14 @@ body {
   
   .equipment-options label {
     cursor: pointer;
+    display: flex;
+    align-items: center;  /* vertical alignment */
+    gap: 0.5rem;          /* horizontal space between checkbox and text */
+  }
+
+  .equipment-options input,
+  .equipment-options label span {
+    cursor: pointer;      /* pointer only on checkbox + text */
   }
   
   .estimate-container {
@@ -256,6 +264,7 @@ body.dark-theme #themeToggle {
   color: #c49b63;
   font-size: 2.4rem;
   margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 .rates-table {
@@ -266,6 +275,12 @@ body.dark-theme #themeToggle {
   border: 1px solid #c49b63;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.small-note {
+  font-size: 1.1rem;
+  color: #b39891; /* same tone but lighter */
+  margin-left: 0.5rem;
 }
 
 .rates-table th,
@@ -279,7 +294,6 @@ body.dark-theme #themeToggle {
 .rates-table th {
   background-color: rgba(196, 155, 99, 0.2);
   color: #c49b63;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -320,4 +334,9 @@ body.light-theme #themeToggle {
 body.light-theme #themeToggle:hover {
   background: #fff;
   color: #c49b63;
+}
+
+body.light-theme {
+  background-color: rgb(240, 234, 231);
+  color: #222;
 }

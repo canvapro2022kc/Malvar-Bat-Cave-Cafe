@@ -22,9 +22,10 @@ body {
 
 /* Light theme */
 .light-theme {
-  background-color: #D6CFCB;
+  background-color: #cbd6cc;
   color: #222;
 }
+
 
 /*FOR CLASS */
 .logo-icon {
@@ -723,7 +724,7 @@ footer {
 /* End of Container */
 
 body.light-theme {
-  background-color: #f7f3f1;
+  background-color: rgb(240, 234, 231);
   color: #222;
 }
 
@@ -788,7 +789,7 @@ body.light-theme .about p {
 
 /* Menu Section */
 body.light-theme .menu {
-  background: linear-gradient(#fffbf9, #c8aea1),
+  background: linear-gradient(#fff7f3, #c8aea1),
               url(images/image8.jpg) center/cover no-repeat;
 }
 
