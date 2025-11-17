@@ -261,6 +261,7 @@ body.dark-theme #themeToggle {
 .rates-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed; /* FIXES LEFT SHIFT */
   color: #B39891;
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid #c49b63;
@@ -283,14 +284,37 @@ body.dark-theme #themeToggle {
   letter-spacing: 1px;
 }
 
+/* Remove last border line */
 .rates-table tr:last-child td {
   border-bottom: none;
 }
 
+/* Hover effect */
 .rates-table tr:hover {
   background-color: rgba(196, 155, 99, 0.1);
   transition: 0.3s;
 }
+
+/* 
+   CATEGORY HEADER (colspan row) 
+   This styles the row: "FOR EVENTS AND GATHERING"
+*/
+.rates-table td[colspan] {
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #c49b63;
+  background-color: rgba(196, 155, 99, 0.15); /* light gold tint */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #444;
+}
+
+/* Optionally make the category not trigger hover color */
+.rates-table tr.category-row:hover {
+  background-color: rgba(196, 155, 99, 0.15);
+}
+
 
 /* ===== THEME TOGGLE BUTTON ===== */
 #themeToggle {
