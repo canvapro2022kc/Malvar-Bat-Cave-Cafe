@@ -1,16 +1,13 @@
-const swiper = new Swiper(".swiper", {
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-  },
-  effect: "fade",
-  loop: true,
-
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+document.addEventListener('DOMContentLoaded', () => {
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 });
+
 
 let menu = document.querySelector(".menu");
 let nums = document.querySelectorAll(".num");

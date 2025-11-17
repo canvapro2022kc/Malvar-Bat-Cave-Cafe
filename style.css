@@ -142,11 +142,16 @@ body {
 
 .banner {
   position: absolute;
-  top: 20%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
   text-align: center;
+}
+
+.banner h3{
+  color:#f0eae7;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .main-heading {
@@ -165,6 +170,7 @@ body {
   margin: 2rem 0;
   line-height: 1.5;
   letter-spacing: 0.2rem;
+  white-space: nowrap;
 }
 
 .banner p {
@@ -210,9 +216,31 @@ body {
   border: 0.1rem solid #c49b63;
 }
 
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #dfe4d7; /* your desired color */
+  font-size: 1.5rem; /* optional size */
+}
+
+.swiper-button-prev {
+  margin-left: 2rem; /* distance from left */
+}
+
+.swiper-button-next {
+  margin-right: 2rem; /* distance from right */
+}
+
 .swiper {
   width: 100%;
   height: 85%;
+}
+
+.swiper-button-prev {
+  left: 2rem; /* distance from left */
+}
+
+.swiper-button-next {
+  right: 2rem; /* distance from right */
 }
 
 .swiper-slide img {
@@ -297,11 +325,13 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 .about {
   width: 100%;
   height: 60vh;
-  background-color: #c49b63;
+  background-color: #4c3f54;
   display: flex;
   align-items: center;
   justify-content: center; 
-  padding-right: 80px;
+  padding-right: 100px;
+  padding-top: 40px;
+  
 }
 
 .about div {
@@ -345,7 +375,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 .menu {
   width: 100%;
   height: 70vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+  background: linear-gradient(#000000, #3d3245),
   url(images/image8.jpg) center no-repeat;
   background-size: cover;
   display: flex;
@@ -385,8 +415,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
   margin: 0.1rem;
   font-size: 1.3rem;
   background-color: transparent;
-  border: 0.1rem solid #c49b63;
-  color: #c49b63;
+  border: 0.1rem solid #845a1f;
+  color: #845a1f;
   text-transform: uppercase;
   transition: all 0.3s;
 }
@@ -719,22 +749,22 @@ body.light-theme .landing {
 }
 
 body.light-theme .banner h1 {
-  color: #222;
+  color: hsl(0, 0%, 100%);
 }
 
 body.light-theme .banner p {
-  color: #333;
+  color: #ffffff;
 }
 
 body.light-theme .banner-btn-1,
 body.light-theme .banner-btn-2 {
-  border-color: #222;
-  color: #222;
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 body.light-theme .banner-btn-2:hover {
-  background-color: #c49b63;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* About Section */
