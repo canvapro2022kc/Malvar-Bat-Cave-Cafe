@@ -174,6 +174,34 @@ h1 {
   color: #c49b63;
 }
 
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --nav-bg: #1f1f1f;
+  --link-color: #f0f0f0;
+  --button-bg: #2c2c2c;
+  --button-text: #f0f0f0;
+}
+
+body.dark-theme {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-theme .navbar {
+  background-color: var(--nav-bg);
+}
+
+body.dark-theme .navbar a {
+  color: var(--link-color);
+}
+
+body.dark-theme #themeToggle {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+
 /* ===== THEME TOGGLE BUTTON ===== */
 #themeToggle {
   background: transparent;
