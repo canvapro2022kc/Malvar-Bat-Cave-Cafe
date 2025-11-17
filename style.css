@@ -187,7 +187,7 @@ body {
   height: 5.5rem;
   cursor: pointer;
   margin: 0.1rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   transition: all 0.3s;
 }
 
@@ -211,9 +211,9 @@ body {
 }
 
 .banner-btn-2:hover {
-  background-color: #c49b63;
+  background-color: #ffffff;
   color: #222;
-  border: 0.1rem solid #c49b63;
+  border: 0.1rem solid #ffffff;
 }
 
 .swiper-button-prev::after,
