@@ -35,29 +35,46 @@ h1 {
 
 .menu-table {
   width: 100%;
+  table-layout: fixed !important;
   border-collapse: separate;
   border-spacing: 20px;
 }
 
+/* FORCE CELLS TO ALWAYS BE SAME SIZE */
+.menu-table td {
+  width: 33.33% !important;
+  vertical-align: top;
+}
+
+
 .menu-item {
   background: #fff;
   border-radius: 20px;
-  padding: 20px;
+  padding-left: 5px;
+  padding-top: 40px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
+  height: auto;
+  min-height: 330px;
+  overflow: hidden;
 }
+
 
 .menu-item:hover {
   transform: translateY(-5px);
 }
 
 .menu-item img {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
+  display: block;
+  margin: 0 auto 15px auto; /* perfectly centers the image */
+  border: 5px solid #fff;   /* creates clean white buffer from border */
+  box-shadow: 0 0 0 5px #fff; /* ensures circle never visually touches card border */
 }
 
 .menu-item h3 {
@@ -355,12 +372,19 @@ body.dark-theme .empty {
   color: #aaa;
 }
 
-/* Responsive for phones */
+
 /* ===== Responsive ===== */
 /* Mobile first (up to 600px) */
 @media (max-width: 600px) {
+  .nav-right{
+    display: flex;
+    align-items: right;
+    margin-left: auto;
+    gap: 1.5rem;
+  }
+  
   .menu-table {
-    border-spacing: 15px;
+    border-spacing: 10px;
   }
 
   .menu-item img {
@@ -369,11 +393,11 @@ body.dark-theme .empty {
   }
 
   .menu-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .menu-item p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .price {
@@ -381,16 +405,30 @@ body.dark-theme .empty {
   }
 
   .add-to-cart {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
+
+  #cartBtn{
+    font-size: 2.5rem;
+    margin-right: 2rem;
+  }
+
+
 }
 
 /* Tablet (601px - 900px) */
 @media (min-width: 601px) and (max-width: 900px) {
+  .nav-right{
+    display: flex;
+    align-items: right;
+    margin-left: auto;
+    gap: 2rem;
+  }
+
   .menu-table {
     border-spacing: 15px;
   }
@@ -401,11 +439,11 @@ body.dark-theme .empty {
   }
 
   .menu-item h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .menu-item p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 
   .price {
@@ -413,16 +451,29 @@ body.dark-theme .empty {
   }
 
   .add-to-cart {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   h1 {
     font-size: 4rem;
   }
+
+  #cartBtn{
+    font-size: 2.5rem;
+    margin-right: 2rem;
+  }
+
 }
 
 /* Small Desktop (901px - 1200px) */
 @media (min-width: 901px) and (max-width: 1200px) {
+  .nav-right{
+    display: flex;
+    align-items: right;
+    margin-left: auto;
+    gap: 2rem;
+  }
+
   .menu-item img {
     width: 110px;
     height: 110px;
@@ -447,10 +498,23 @@ body.dark-theme .empty {
   h1 {
     font-size: 4.5rem;
   }
+
+  #cartBtn{
+    font-size: 2.5rem;
+    margin-right: 2rem;
+  }
+
 }
 
 /* Large Desktop (1201px and up) */
 @media (min-width: 1201px) {
+  .nav-right{
+    display: flex;
+    align-items: right;
+    margin-left: auto;
+    gap: 2rem;
+  }
+
   .menu-item img {
     width: 120px;
     height: 120px;
@@ -475,5 +539,11 @@ body.dark-theme .empty {
   h1 {
     font-size: 5rem;
   }
+
+  #cartBtn{
+    font-size: 2.5rem;
+    margin-right: 2rem;
+  }
+
 }
 
