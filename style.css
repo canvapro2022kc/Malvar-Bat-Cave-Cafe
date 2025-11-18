@@ -13,6 +13,50 @@ html {
 }
 /* End of Default Styles */
 
+/* POP UP */
+.popup {
+  display: none; /* hidden initially */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 9999;
+}
+
+.popup-content {
+  position: relative;
+  background: white;
+  padding: 10px;           /* reduced padding */
+  border-radius: 10px;
+  max-width: 800px;        /* max width smaller */
+  width: 80%;              /* responsive width */
+  max-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content img {
+  width: 100%;             /* image fills container width */
+  height: auto;            /* maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 5px;                /* closer to the edge */
+  right: 10px;
+  font-size: 24px;         /* slightly smaller X */
+  cursor: pointer;
+  color: #333;
+}
+
+/* End of POP UP */
+
 body {
   background-color: #222; /* default dark background */
   color: white;
@@ -866,7 +910,7 @@ body.light-theme #themeToggle:hover {
   html {
     font-size: 35%;
   }
-  
+
   .landing-contact div span:nth-child(2) {
     display: none;
   }

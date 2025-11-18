@@ -32,9 +32,9 @@
     </div>
     <div class = "nav-right">
     <div class="navigation">
-      <a href="index.html">Home</a>
-      <a href="menupage.html">Menu</a>
-      <a href="reserve.html">Book</a>
+      <a href="home.php">Home</a>
+      <a href="menu.php">Menu</a>
+      <a href="reserve.php">Book</a>
     </div>
     <div class="cart-container">
       <button id="cartBtn">🛒<span id="cartCount">0</span></button>

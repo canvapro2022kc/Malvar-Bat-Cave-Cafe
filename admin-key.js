@@ -17,7 +17,7 @@ document.addEventListener("keydown", (e) => {
 
     if (keyInput === ADMIN_KEY) {
       alert("Admin access granted.");
-      window.location.href = "admin.html";
+      window.location.href = "admin.php";
     } else if (keyInput) {
       alert("Invalid key. Access denied.");
     }

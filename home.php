@@ -34,7 +34,16 @@ $error = "";
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
   </head>
+  
   <body>
+    
+  <div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+      <span id="closebutton" class="close">&times;</span>
+      <img src="images/popup.png" alt="Popup Image">
+    </div>
+  </div>
+
     <!-- Container -->
     <div class="container">
       <!-- Navigation -->

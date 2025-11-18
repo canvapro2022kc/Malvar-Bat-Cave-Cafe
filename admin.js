@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // ---- LOGOUT ----
     document.getElementById("logoutBtn").addEventListener("click", () => {
-      window.location.href = "index.html";
+      window.location.href = "home.php";
     });
 
   });
