@@ -37,3 +37,24 @@ const startCount = (el) => {
   }, 2000 / nums);
 };
 
+// START POP UP
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("popup");
+  const closeButton = document.getElementById("closebutton");
+
+  // Show popup
+  popup.style.display = "flex";
+
+  // Close popup when clicking the X button
+  closeButton.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // Close popup when clicking outside the content
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+});
+// END OF POP UP

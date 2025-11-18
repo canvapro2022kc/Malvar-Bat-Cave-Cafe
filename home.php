@@ -34,7 +34,16 @@ $error = "";
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
   </head>
+  
   <body>
+    
+  <div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+      <span id="closebutton" class="close">&times;</span>
+      <img src="images/popup.png" alt="Popup Image">
+    </div>
+  </div>
+
     <!-- Container -->
     <div class="container">
       <!-- Navigation -->
@@ -49,7 +58,7 @@ $error = "";
         <div class="nav-right">
           <div class="navigation" id="navMenu">
             <a href="index.php">Home</a>
-            <a href="menupage.php">Menu</a>
+            <a href="menu.php">Menu</a>
             <a href="reserve.php ">Book</a>
           </div>
         </div>
