@@ -160,23 +160,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <form class="reserve-form" id="reserveForm">
       <div class="input-group">
-        <input type="text" id="firstName" placeholder="First Name" required>
-        <input type="text" id="lastName" placeholder="Last Name" required>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
       </div>
 
       <div class="input-group">
-        <input type="email" id="email" placeholder="Email Address" required>
-        <input type="tel" id="phone" placeholder="09xxxxxxxxx" pattern="^09\d{9}$" title="Enter a valid PH phone number (e.g., 09269647382)" required>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+        <input type="tel" id="phone" name="phone" placeholder="09xxxxxxxxx" pattern="^09\d{9}$" title="Enter a valid PH phone number (e.g., 09269647382)" required>
       </div>
 
       <div class="input-group">
-        <input type="text" id="studentId" placeholder="Student ID (e.g., 24-62218)" pattern="^2[0-6]-\d{5}$" title="Enter a valid Student ID in the format 2X-XXXXX, where X is 0–6" required>
-        <input type="number" id="hours" placeholder="Number of Hours" min="1" required>
+        <input type="text" id="studentId" name="studentId" placeholder="Student ID (e.g., 24-62218)" pattern="^2[0-6]-\d{5}$" title="Enter a valid Student ID in the format 2X-XXXXX, where X is 0–6" required>
+        <input type="number" id="hours" name="hours" placeholder="Number of Hours" min="1" required>
       </div>
 
       <div class="input-group">
-        <input type="date" id="date" required>
-        <input type="time" id="startTime" min="13:00" max="23:59" required>
+        <input type="date" id="date" name="date" required>
+        <input type="time" id="startTime" name="startTime" min="13:00" max="23:59" required>
       </div>
       <small class="note">Operating Hours: 1:00 PM – 1:00 AM</small>
 
@@ -186,10 +186,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
 
       <div class="equipment-options">
-        <label><input type="checkbox" id="projector"> 
+        <label><input type="checkbox" id="projector" name="projector"> 
           <span>Projector (₱150/hour)</span>
         </label>
-        <label><input type="checkbox" id="speaker"> 
+        <label><input type="checkbox" id="speaker" name="speaker"> 
           <span>Speaker &amp; Mic (₱150/hour)</span>
         </label>
       </div>
