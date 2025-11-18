@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const form = document.getElementById("reserveForm");
   const calculateBtn = document.getElementById("calculateBtn");
   const estimateContainer = document.getElementById("estimateContainer");
-  const confirmationMessage = document.getElementById("confirmationMessage");
   const submitBtn = document.getElementById("submitBtn");
 
   const BASE_RATE = 50;
@@ -18,10 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------
   // Validation Functions
   // -----------------------
-  function validateName(name) { return /^[A-Za-z]+$/.test(name.trim()); }
-  function validateEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()); }
-  function validatePhone(phone) { return /^09\d{9}$/.test(phone.trim()); }
-  function validateStudentID(id) { return /^2([0-6])-\d{5}$/.test(id.trim()); }
+  const validateName = (name) => /^[A-Za-z]+$/.test(name.trim());
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+  const validatePhone = (phone) => /^09\d{9}$/.test(phone.trim());
+  const validateStudentID = (id) => /^2([0-6])-\d{5}$/.test(id.trim());
+
   function validateDate(dateValue) {
     if (!dateValue) return false;
     const selectedDate = new Date(dateValue);
@@ -29,12 +30,29 @@ document.addEventListener("DOMContentLoaded", () => {
     today.setHours(0,0,0,0);
     return selectedDate >= today;
   }
-  function validateRentalType() { return !!document.querySelector("input[name='rentalType']:checked"); }
-  function validateHours(hours) { return hours && parseFloat(hours) > 0; }
-  function validateStartTime(time) { return !!time; }
+
+  const validateRentalType = () =>
+    !!document.querySelector("input[name='rentalType']:checked");
+
+  const validateHours = (hours) => hours && parseFloat(hours) > 0;
+  const validateStartTime = (time) => !!time;
+
 
   // -----------------------
-  // Enable/Disable Buttons
+  // Popup System (GLOBAL, FIXED)
+  // -----------------------
+  function showPopup(message) {
+    document.getElementById("popupText").textContent = message;
+    document.getElementById("popupOverlay").style.display = "flex";
+  }
+
+  document.getElementById("closePopup").addEventListener("click", () => {
+    document.getElementById("popupOverlay").style.display = "none";
+  });
+
+
+  // -----------------------
+  // Enable Calculate Button
   // -----------------------
   function toggleButtons() {
     const firstName = document.getElementById("firstName").value;
@@ -44,13 +62,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const studentId = document.getElementById("studentId").value;
     const date = document.getElementById("date").value;
 
-    const allValid = validateName(firstName) &&
-                     validateName(lastName) &&
-                     validateEmail(email) &&
-                     validatePhone(phone) &&
-                     validateStudentID(studentId) &&
-                     validateDate(date) &&
-                     validateRentalType();
+    const allValid =
+      validateName(firstName) &&
+      validateName(lastName) &&
+      validateEmail(email) &&
+      validatePhone(phone) &&
+      validateStudentID(studentId) &&
+      validateDate(date) &&
+      validateRentalType();
 
     calculateBtn.disabled = !allValid;
   }
@@ -58,78 +77,90 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("input", toggleButtons);
   form.addEventListener("change", toggleButtons);
 
+
   // -----------------------
   // Calculate Cost
   // -----------------------
   calculateBtn.addEventListener("click", () => {
-    const rentalType = document.querySelector("input[name='rentalType']:checked");
-    const hours = parseFloat(document.getElementById("hours").value);
-    const startTime = document.getElementById("startTime").value;
-    const projector = document.getElementById("projector").checked;
-    const speaker = document.getElementById("speaker").checked;
-    const email = document.getElementById("email").value.trim();
+
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
+    const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const studentId = document.getElementById("studentId").value.trim();
     const date = document.getElementById("date").value;
+    const hours = parseFloat(document.getElementById("hours").value);
+    const startTime = document.getElementById("startTime").value;
+    const rentalType = document.querySelector("input[name='rentalType']:checked");
+    const projector = document.getElementById("projector").checked;
+    const speaker = document.getElementById("speaker").checked;
 
-    // Validate all inputs again before calculating
-    if (!validateName(firstName) ||
-        !validateName(lastName) ||
-        !validateEmail(email) ||
-        !validatePhone(phone) ||
-        !validateStudentID(studentId) ||
-        !validateDate(date) ||
-        !validateRentalType() ||
-        !validateHours(hours) ||
-        !validateStartTime(startTime)) {
+    if (
+      !validateName(firstName) ||
+      !validateName(lastName) ||
+      !validateEmail(email) ||
+      !validatePhone(phone) ||
+      !validateStudentID(studentId) ||
+      !validateDate(date) ||
+      !validateRentalType() ||
+      !validateHours(hours) ||
+      !validateStartTime(startTime)
+    ) {
       alert("Please fill out all fields correctly before calculating.");
       return;
     }
 
-    // Time calculation
+    // TIME CALC
     const [hour, minute] = startTime.split(":").map(Number);
+
     let endHour = hour + hours;
     let endMinute = minute;
     if (endHour >= 24) endHour -= 24;
 
     const validStart = hour >= 13 || hour < 1;
     const validEnd = endHour >= 13 || endHour < 1;
+
     if (!validStart || !validEnd) {
       alert("Reservation time must be between 1:00 PM and 1:00 AM.");
       return;
     }
 
-    // Cost calculation
+    // COST CALC
     let total = 0;
+
     if (rentalType.value === "table") {
       total = hours < 2 ? MIN_FEE : hours * BASE_RATE;
       if (projector) total += hours * PROJECTOR_RATE;
       if (speaker) total += hours * SPEAKER_RATE;
-    } else if (rentalType.value === "whole") {
+
+    } else {
       total = hours < 2 ? WHOLE_PLACE_MIN : hours * WHOLE_PLACE_RATE;
     }
 
     estimatedCost = total;
 
-    // Format end time
+    // FORMAT TIME
     const endPeriod = endHour >= 12 ? "PM" : "AM";
     const displayHour = ((endHour + 11) % 12) + 1;
-    endTimeFormatted = `${displayHour}:${endMinute.toString().padStart(2, "0")} ${endPeriod}`;
 
+    endTimeFormatted = `${displayHour}:${String(endMinute).padStart(2, "0")} ${endPeriod}`;
+
+    // SHOW ESTIMATE
     estimateContainer.style.display = "block";
     estimateContainer.innerHTML = `
       <strong>Estimated Cost:</strong> ₱${estimatedCost.toFixed(2)}<br>
       <strong>Expected End Time:</strong> ${endTimeFormatted}<br>
-      <strong>Rental Type:</strong> ${rentalType.value === "whole" ? "Whole Place" : "Table Only"}
+      <strong>Rental Type:</strong> ${
+        rentalType.value === "whole" ? "Whole Place" : "Table Only"
+      }
     `;
 
     submitBtn.disabled = false;
   });
 
+
   // -----------------------
-  // Submit Form
+  // Submit Reservation
   // -----------------------
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -142,17 +173,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const date = document.getElementById("date").value;
     const rentalType = document.querySelector("input[name='rentalType']:checked");
 
-    if (!validateName(firstName) ||
-        !validateName(lastName) ||
-        !validateEmail(email) ||
-        !validatePhone(phone) ||
-        !validateStudentID(studentId) ||
-        !validateDate(date) ||
-        !validateRentalType()) {
+    // Final validation
+    if (
+      !validateName(firstName) ||
+      !validateName(lastName) ||
+      !validateEmail(email) ||
+      !validatePhone(phone) ||
+      !validateStudentID(studentId) ||
+      !validateDate(date) ||
+      !validateRentalType()
+    ) {
       alert("Please fill out all fields correctly before submitting.");
       return;
     }
 
+    // Save to localStorage
     let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
     reservations.push({
       firstName,
@@ -163,45 +198,35 @@ document.addEventListener("DOMContentLoaded", () => {
       date,
       startTime: document.getElementById("startTime").value,
       hours: document.getElementById("hours").value,
-      guests: document.getElementById("guests")?.value || "",
       rentalType: rentalType.value,
       status: "Pending"
     });
 
     localStorage.setItem("reservations", JSON.stringify(reservations));
 
-    const popupOverlay = document.getElementById("popupOverlay");
-    const popupText = document.getElementById("popupText");
+    // POPUP SUCCESS
+    showPopup(
+      `Reservation Sent! Awaiting admin approval. Type: ${
+        rentalType.value === "whole" ? "Whole Place" : "Table Only"
+      } — Estimated Fee: ₱${estimatedCost.toFixed(2)} (Ends at ${endTimeFormatted})`
+    );
 
-    popupText.textContent =
-    `Reservation Sent! Awaiting admin approval. Type: ${
-    rentalType.value === "whole" ? "Whole Place" : "Table Only"
-    } — Estimated Fee: ₱${estimatedCost.toFixed(2)} (Ends at ${endTimeFormatted})`;
-
-    popupOverlay.style.display = "flex";
-
+    // RESET
     form.reset();
     estimateContainer.style.display = "none";
     submitBtn.disabled = true;
     calculateBtn.disabled = true;
-
-    setTimeout(() => {
-      confirmationMessage.style.display = "none";
-    }, 7000);
   });
 
-  document.getElementById("closePopup").addEventListener("click", () => {
-    document.getElementById("popupOverlay").style.display = "none";
-  });
-  
+
   // -----------------------
-  // Set minimum date dynamically
+  // Minimum Date
   // -----------------------
   const dateInput = document.getElementById("date");
   const today = new Date();
   const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
-  const dd = String(today.getDate()).padStart(2, '0');
-  const minDate = `${yyyy}-${mm}-${dd}`;
-  dateInput.setAttribute('min', minDate);
+  const mm = String(today.getMonth() + 1).padStart(2, "0");
+  const dd = String(today.getDate()).padStart(2, "0");
+  dateInput.min = `${yyyy}-${mm}-${dd}`;
+
 });
