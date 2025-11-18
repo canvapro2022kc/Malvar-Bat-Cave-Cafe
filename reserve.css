@@ -213,7 +213,6 @@ body.dark-theme #themeToggle {
 .logo {
   display: flex;
   align-items: center;
-  cursor: pointer;
   margin-left: 7rem;
 }
 
