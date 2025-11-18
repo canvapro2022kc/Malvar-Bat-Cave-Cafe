@@ -49,7 +49,7 @@ $error = "";
         <div class="nav-right">
           <div class="navigation" id="navMenu">
             <a href="index.php">Home</a>
-            <a href="menupage.php">Menu</a>
+            <a href="menu.php">Menu</a>
             <a href="reserve.php ">Book</a>
           </div>
         </div>

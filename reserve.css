@@ -88,25 +88,62 @@ body {
     color: #222;
   }
 
-  .equipment-options {
+/* Rental Type Radio Buttons */
+.rental-type {
+    display: flex;
+    flex-direction: column;       /* stack vertically */
+    align-items: flex-start;      /* left-align labels */
+    margin: 1.5rem 0;
+    font-size: 1.4rem;
+    color: #B39891;               /* readable on dark background */
+    gap: 0.5rem;                  /* spacing between options */
+}
+
+.rental-type label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.rental-type input[type="radio"] {
+    margin-right: 0.5rem;         /* space between circle and text */
+    width: 1.3rem;
+    height: 1.3rem;
+    accent-color: #c49b63;        /* gold accent color for the circle */
+    cursor: pointer;
+}
+
+/* Equipment Options Checkboxes */
+.equipment-options {
     margin-top: 2rem;
     text-align: left;
     width: 100%;
     font-size: 1.4rem;
-    color: #ccc;
-  }
-  
-  .equipment-options label {
-    cursor: pointer;
+    color: #B39891;               /* match theme text */
     display: flex;
-    align-items: center;  /* vertical alignment */
-    gap: 0.5rem;          /* horizontal space between checkbox and text */
-  }
+    flex-direction: column;
+    gap: 0.5rem;
+}
 
-  .equipment-options input,
-  .equipment-options label span {
-    cursor: pointer;      /* pointer only on checkbox + text */
-  }
+.equipment-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.equipment-options input[type="checkbox"] {
+    width: 1.3rem;
+    height: 1.3rem;
+    accent-color: #c49b63;        /* gold accent for checkbox */
+    cursor: pointer;
+}
+
+/* Optional: Hover effect for better UX */
+.rental-type label:hover,
+.equipment-options label:hover {
+    color: #c49b63;
+}
   
   .estimate-container {
     margin-top: 2rem;
@@ -311,7 +348,6 @@ body.dark-theme #themeToggle {
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid #c49b63;
   border-radius: 10px;
-  overflow: hidden;
 }
 
 .small-note {

@@ -1,3 +1,86 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    header('Content-Type: application/json');
+
+    // Database connection
+    $conn = new mysqli("localhost", "root", "", "matcavecafe");
+    if ($conn->connect_error) {
+        echo json_encode(["status" => "error", "message" => "Connection Failed: " . $conn->connect_error]);
+        exit;
+    }
+
+    // Collect & sanitize input
+    $first_name = trim($_POST['firstName'] ?? '');
+    $last_name  = trim($_POST['lastName'] ?? '');
+    $email      = trim($_POST['email'] ?? '');
+    $phone      = trim($_POST['phone'] ?? '');
+    $student_id = trim($_POST['studentId'] ?? '');
+    $reserve_date = $_POST['date'] ?? '';
+    $start_time   = $_POST['startTime'] ?? '';
+    $hours        = (int)($_POST['hours'] ?? 0);
+    $projector    = isset($_POST['projector']) ? 1 : 0;
+    $speaker      = isset($_POST['speaker']) ? 1 : 0;
+    $total_cost   = (float)($_POST['totalCost'] ?? 0);
+
+    // Validate required fields
+    if (!$first_name || !$last_name || !$email || !$phone || !$student_id || !$reserve_date || !$start_time || $hours <= 0) {
+        echo json_encode(["status" => "error", "message" => "Please fill in all required fields correctly."]);
+        exit;
+    }
+
+    // Calculate end time in PHP
+    $start_datetime = DateTime::createFromFormat('Y-m-d H:i', "$reserve_date $start_time");
+    if (!$start_datetime) {
+        echo json_encode(["status" => "error", "message" => "Invalid date or time format."]);
+        exit;
+    }
+    $end_datetime = clone $start_datetime;
+    $end_datetime->modify("+$hours hours");
+
+    $start_time_str = $start_datetime->format('H:i:s');
+    $end_time_str   = $end_datetime->format('H:i:s');
+
+    // Check for conflicting reservations
+    $stmt = $conn->prepare("
+        SELECT * FROM reservations
+        WHERE reserve_date = ?
+          AND status = 'Confirmed'
+          AND (
+                (start_time < ? AND ADDTIME(start_time, SEC_TO_TIME(hours*3600)) > ?)
+              )
+    ");
+    $stmt->bind_param("sss", $reserve_date, $end_time_str, $start_time_str);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        echo json_encode(["status" => "error", "message" => "Selected time slot is already booked. Please choose another time."]);
+        exit;
+    }
+
+    // Insert reservation
+    $stmt = $conn->prepare("
+        INSERT INTO reservations 
+        (first_name, last_name, email, phone, student_id, reserve_date, start_time, hours, projector, speaker, total_cost)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ");
+    $stmt->bind_param(
+        "ssssssiiidd",
+        $first_name, $last_name, $email, $phone, $student_id,
+        $reserve_date, $start_time_str, $hours, $projector, $speaker, $total_cost
+    );
+
+    if ($stmt->execute()) {
+        echo json_encode(["status" => "success", "message" => "Reservation submitted! Await admin confirmation."]);
+    } else {
+        echo json_encode(["status" => "error", "message" => $stmt->error]);
+    }
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +105,9 @@
     </div>
     <div class="nav-right">
     <div class="navigation">
-      <a href="index.html">Home</a>
-      <a href="menupage.html">Menu</a>
-      <a href="reserve.html">Book</a>
+      <a href="index.php">Home</a>
+      <a href="menu.php">Menu</a>
+      <a href="reserve.php">Book</a>
     </div>
     </div>
   </nav>
