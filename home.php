@@ -1,3 +1,16 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if (session_status() === PHP_SESSION_NONE){
+  session_start();
+}
+
+include 'db_connect.php';
+
+$error = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,9 +48,9 @@
 
         <div class="nav-right">
           <div class="navigation" id="navMenu">
-            <a href="index.html">Home</a>
-            <a href="menupage.html">Menu</a>
-            <a href="reserve.html ">Book</a>
+            <a href="index.php">Home</a>
+            <a href="menupage.php">Menu</a>
+            <a href="reserve.php ">Book</a>
           </div>
         </div>
       </nav>
@@ -52,8 +65,8 @@
             Enjoy our cozy atmosphere and delicious coffee selections. 
             Whether you're here for relaxation or a quick bite, we've got you covered.
           </p>
-          <a href="reserve.html"><button type="button" class="menu-btn reserve-btn">Reserve Now</button></a>
-          <a href="menupage.html"><button type="button" class="banner-btn banner-btn-2">
+          <a href="reserve.php"><button type="button" class="menu-btn reserve-btn">Reserve Now</button></a>
+          <a href="menupage.php"><button type="button" class="banner-btn banner-btn-2">
             VIEW MENU
           </button></a>
         </div>
@@ -134,7 +147,7 @@
             Explore our wide selection of beverages, snacks, and pastries made to delight 
             your taste buds. Discover our full menu and find your new favorite treat today.
           </p>
-          <a href="menupage.html"><button type="button" class="menu-btn">View Full Menu</button></a>
+          <a href="menupage.php"><button type="button" class="menu-btn">View Full Menu</button></a>
         </div>
         <div class="menu-right">
           <div class="menu-right-images">
