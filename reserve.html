@@ -53,7 +53,7 @@
           </tr>
           <tr>
             <td>Minimum Fee</td>
-            <td>₱75.00 <br><span class="small-note">(Charged if booking is less than 2 hours)</span></td>
+            <td>₱75.00 <br><span class="small-note">(booking less than 2 hours)</span></td>
           </tr>
           <tr>
             <td>Projector</td>
@@ -73,6 +73,7 @@
         </tbody>
       </table>
     </div>
+    <br> <br>
 
     <form class="reserve-form" id="reserveForm">
       <div class="input-group">
@@ -82,11 +83,12 @@
 
       <div class="input-group">
         <input type="email" id="email" placeholder="Email Address" required>
-        <input type="text" id="phone" placeholder="Phone Number" pattern="^09\\d{9}$" title="Enter a valid PH phone number (e.g., 09123456789)" required>
+        <input type="tel" id="phone" placeholder="09xxxxxxxxx" pattern="^09\d{9}$" title="Enter a valid PH phone number (e.g., 09269647382)" required>
       </div>
 
       <div class="input-group">
-        <input type="text" id="studentId" placeholder="Student ID" pattern="^[A-Z0-9-]+$" title="Only letters, numbers, and dashes allowed" required>
+        <input type="text" id="studentId" placeholder="Student ID (e.g., 24-62218)" pattern="^2[0-6]-\d{5}$" title="Enter a valid Student ID in the format 2X-XXXXX, where X is 0–6" required>
+        <input type="number" id="hours" placeholder="Number of Hours" min="1" required>
       </div>
 
       <div class="input-group">
@@ -95,8 +97,9 @@
       </div>
       <small class="note">Operating Hours: 1:00 PM – 1:00 AM</small>
 
-      <div class="input-group">
-        <input type="number" id="hours" placeholder="Number of Hours" min="1" required>
+      <div class="rental-type">
+        <label><input type="radio" name="rentalType" value="table"> Rent a Table</label><br>
+        <label><input type="radio" name="rentalType" value="whole"> Rent the Whole Place</label>
       </div>
 
       <div class="equipment-options">
@@ -113,19 +116,28 @@
         <button type="submit" class="menu-btn" id="submitBtn" disabled>Submit Reservation</button>
       </div>
 
+      <div id="estimateContainer" class="estimate-box" style="display:none;"></div>
+
     <div id="confirmationMessage" class="confirmation-message"></div>
     </form>
 
     <a href="index.html" class="back-home">
       <i class="fa-solid fa-arrow-left"></i> Back to Home
     </a>
-  </section>
+  </section> 
 
   <!-- Footer -->
   <footer>
     <p class="copyright">&copy; 2025 Malvar Cave Café. All Rights Reserved.</p>
   </footer>
   </div>
+
+  <div id="popupOverlay" class="popup-overlay">
+    <div class="popup-box">
+      <p id="popupText"></p>
+      <button id="closePopup">OK</button>
+    </div>
+  </div> 
 
   <script src="reserve.js"></script>
   <script src="admin-key.js"></script>

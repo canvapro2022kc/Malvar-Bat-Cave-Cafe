@@ -74,7 +74,9 @@ $error = "";
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img decoding="async" src="images/1.png" /></div>
             <div class="swiper-slide"><img decoding="async" src="images/2.png" /></div>
-            <div class="swiper-slide"><img decoding="async" src="images/0.png" /></div>
+            <div class="swiper-slide"><img decoding="async" src="images/3.png" /></div>
+            <div class="swiper-slide"><img decoding="async" src="images/4.png" /></div>
+            <div class="swiper-slide"><img decoding="async" src="images/5.png" /></div>
           </div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -152,16 +154,16 @@ $error = "";
         <div class="menu-right">
           <div class="menu-right-images">
             <div class="menu-img-wrapper">
-              <img decoding="async" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" />
+              <img decoding="async" src="images/dom1.png" />
             </div>
             <div class="menu-img-wrapper">
-              <img decoding="async" src="https://plus.unsplash.com/premium_photo-1675435644687-562e8042b9db?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=749" />
+              <img decoding="async" src="images/dom2.png" />
             </div>
             <div class="menu-img-wrapper">
-              <img decoding="async" src="https://plus.unsplash.com/premium_photo-1673545518947-ddf3240090b1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" />
+              <img decoding="async" src="images/dom3.png" />
             </div>
             <div class="menu-img-wrapper">
-              <img decoding="async" src="https://plus.unsplash.com/premium_photo-1674327105076-36c4419864cf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" />
+              <img decoding="async" src="images/dom4.png" />
             </div>
           </div>
         </div>

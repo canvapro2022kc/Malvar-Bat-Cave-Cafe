@@ -8,10 +8,3 @@ if (hour >= 5 && hour < 18) {
 } else {
   body.classList.remove("light-theme");
 }
-
-// Optional: Press "L" key to toggle manually
-document.addEventListener("keydown", (e) => {
-  if (e.key.toLowerCase() === "l") {
-    body.classList.toggle("light-theme");
-  }
-});
