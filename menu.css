@@ -37,6 +37,7 @@ h1 {
   width: 100%;
   border-collapse: separate;
   border-spacing: 20px;
+  table-layout: fixed; /* Aly added */
 }
 
 .menu-item {
@@ -70,6 +71,8 @@ h1 {
   color: #555;
   font-size: 14px;
   margin-bottom: 15px;
+  overflow: hidden; /* Aly added */
+  height: 50px; /* Aly added */
 }
 
 .price {
@@ -117,7 +120,6 @@ h1 {
 .logo {
   display: flex;
   align-items: center;
-  cursor: pointer;
   margin-left: 7rem;
 }
 
@@ -332,14 +334,154 @@ body.light-theme #themeToggle:hover {
   color: #777;
 }
 
-/* Responsive for phones */
+/* ===== Responsive ===== */
+/* Mobile first (up to 600px) */
 @media (max-width: 600px) {
-  .menu-table, tr, td {
-    display: block;
-    width: 100%;
+  .menu-item {
+    padding: 10px;
   }
 
-  td {
-    margin-bottom: 20px;
+  .menu-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .menu-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .menu-item p {
+    font-size: 1.3rem;
+    height: auto;
+  }
+
+  .price {
+    font-size: 1.3rem;
+    padding: 4px 8px;
+  }
+
+  .add-to-cart {
+    font-size: 1.4rem;
+    padding: 4px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  body {
+    padding: 20px 10px;
+  }
+
+  #cartDropdown{
+    font-size: 1.7rem;
+  }
+
+  #cartItems{
+    font-size: 1.7rem;  
+  }
+
+  #cartTotal{
+    font-size: 2rem;
+  }
+}
+
+/* Tablet (601px - 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .menu-table {
+    border-spacing: 15px;
+  }
+
+  .menu-item img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .menu-item h3 {
+    font-size: 2rem;
+  }
+
+  .menu-item p {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .add-to-cart {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  #cartDropdown{
+    font-size: 1.7rem;
+  }
+
+  #cartItems{
+    font-size: 1.7rem;  
+  }
+
+  #cartTotal{
+    font-size: 2rem;
+  }
+}
+
+/* Small Desktop (901px - 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .menu-item img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .menu-item h3 {
+    font-size: 1.8rem;
+  }
+
+  .menu-item p {
+    font-size: 1.2rem;
+  }
+
+  .price {
+    font-size: 1.4rem;
+  }
+
+  .add-to-cart {
+    font-size: 1.6rem;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+/* Large Desktop (1201px and up) */
+@media (min-width: 1201px) {
+  .menu-item img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .menu-item h3 {
+    font-size: 2rem;
+  }
+
+  .menu-item p {
+    font-size: 1.4rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+  }
+
+  .add-to-cart {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 5rem;
   }
 }
