@@ -25,10 +25,12 @@
     <!-- Navigation -->
   <nav class="navbar">
     <div class="logo">
-      <div class="logo-text">
-        <img src="images/bcclogo.png" alt="Coffee Icon" class="logo-icon" />
-        <img src="images/bcctextbasedlogo.png" alt="Malvar Bat Cave Cafe Logo" class="logo-img" />
-      </div>
+          <a href="home.php" class="logo-link">
+          <div class="logo-text">
+            <img src="images/bcclogo.png" alt="Coffee Icon" class="logo-icon" />
+            <img src="images/bcctextbasedlogo.png" alt="Malvar Bat Cave Cafe Logo" class="logo-img" />
+          </div>
+          </a>
     </div>
     <div class = "nav-right">
     <div class="navigation">

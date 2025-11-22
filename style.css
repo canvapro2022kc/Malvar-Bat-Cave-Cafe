@@ -72,6 +72,11 @@ body {
 
 
 /*FOR CLASS */
+
+.logo-link{
+  text-decoration: none;
+}
+
 .logo-icon {
   height: 50px;       
   width: auto;
@@ -88,11 +93,12 @@ body {
 /* Container */
 .container {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  padding-top: 10rem;
 }
 
 /* Navigation */
@@ -181,13 +187,13 @@ body {
 /* Landing */
 .landing {
   width: 100%;
-  height: 95vh;
+  height: calc(100vh - 10rem);
   position: relative;
 }
 
 .banner {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -276,7 +282,7 @@ body {
 
 .swiper {
   width: 100%;
-  height: 85%;
+  height: calc(100% - 15vh);
 }
 
 .swiper-button-prev {
@@ -325,7 +331,8 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 
 .landing-contact {
   position: absolute;
-  top: 85%;
+  bottom: 0;
+  top: auto;
   left: 0;
   width: 100%;
   height: 15vh;
@@ -369,7 +376,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 /* About */
 .about {
   width: 100%;
-  height: 60vh;
+  min-height: 60vh;
   background-color: #483d50;
   display: flex;
   align-items: center;
@@ -420,7 +427,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active::after {
 /* Menu */
 .menu {
   width: 100%;
-  height: 70vh;
+  min-height: 70vh;
   background: linear-gradient(#000000, #3d3245),
   url(images/image8.jpg) center no-repeat;
   background-size: cover;
@@ -906,9 +913,34 @@ body.light-theme #themeToggle:hover {
 /* Responsive */
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   html {
     font-size: 35%;
+  }
+
+  .logo {
+    margin-left: 2rem; 
+
+  .logo-icon {
+    height: 35px; 
+  }
+
+  .logo-img {
+    height: 12rem; 
+  }
+  
+  .landing{
+    width: 100%;
+    position: relative;
+    height: calc(100vh - 8rem);
+  }
+
+  .landing-contact {
+    height: 8rem;
+  }
+  .swiper{
+    width: 100%;
+    height: calc(100% - 8rem);
   }
 
   .landing-contact div span:nth-child(2) {
@@ -1007,10 +1039,7 @@ body.light-theme #themeToggle:hover {
   }
 
   .about {
-    height: 80vh;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    min-height: 110vh;
     padding: 2rem 1rem;
   }
 
@@ -1054,13 +1083,17 @@ body.light-theme #themeToggle:hover {
   .about div {
     width: 90%;
     max-width: 35rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .customers {
-    height: 110vh;
+   min-height: 110vh;
   }
-}
-
+}}
 
 @media (max-width: 1023px){
   html {
@@ -1232,6 +1265,15 @@ body.light-theme #themeToggle:hover {
     font-size: 1.6rem;
     margin-right: 2rem;
   }
+
+  .menu-left .main-heading {
+    font-size: 2.8rem;
+  }
+  
+  .menu-left h1 {
+    margin-top: -20px; /* IDAGDAG: Ito ang magtutulak sa "OUR MENU" pababa */
+  }
+
 
   /* Landing / Banner */
   .banner h3.main-heading {

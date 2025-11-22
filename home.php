@@ -49,10 +49,12 @@ $error = "";
       <!-- Navigation -->
       <nav class="navbar">
         <div class="logo">
+          <a href="home.php" class="logo-link">
           <div class="logo-text">
             <img src="images/bcclogo.png" alt="Coffee Icon" class="logo-icon" />
             <img src="images/bcctextbasedlogo.png" alt="Malvar Bat Cave Cafe Logo" class="logo-img" />
           </div>
+          </a>
         </div>
 
         <div class="nav-right">
@@ -81,11 +83,11 @@ $error = "";
         </div>
         <div class="swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img decoding="async" src="images/1.png" /></div>
-            <div class="swiper-slide"><img decoding="async" src="images/2.png" /></div>
-            <div class="swiper-slide"><img decoding="async" src="images/3.png" /></div>
-            <div class="swiper-slide"><img decoding="async" src="images/4.png" /></div>
-            <div class="swiper-slide"><img decoding="async" src="images/5.png" /></div>
+            <div class="swiper-slide"><img decoding="async" src="images/uno.png" /></div>
+            <div class="swiper-slide"><img decoding="async" src="images/dos.png" /></div>
+            <div class="swiper-slide"><img decoding="async" src="images/tres.png" /></div>
+            <div class="swiper-slide"><img decoding="async" src="images/kwatro.png" /></div>
+            <div class="swiper-slide"><img decoding="async" src="images/singko.png" /></div>
           </div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>

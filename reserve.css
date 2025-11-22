@@ -1,3 +1,5 @@
+
+
 body {
     background-color: #000;
     color: #fff;
@@ -246,6 +248,9 @@ body.dark-theme #themeToggle {
   color: var(--button-text);
 }
 
+.logo-link{
+  text-decoration: none;
+}
 
 .logo {
   display: flex;
