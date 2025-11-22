@@ -26,16 +26,29 @@
     <!-- MENU MANAGEMENT -->
     <section id="menu" class="tab-content active">
       <h2>Menu Management</h2>
-      <form id="menuForm">
-        <input type="text" id="menuName" placeholder="Item Name" required>
-        <input type="number" id="menuPrice" placeholder="Price (PHP)" required>
-        <select id="menuCategory">
-          <option value="Specialty Coffee">Specialty Coffee</option>
-          <option value="Pastries">Pastries</option>
-          <option value="Snacks">Snacks</option>
+      <form id="menuForm" enctype="multipart/form-data">
+        <input type="text" name="name" id="menuName" placeholder="Item Name" required>
+
+        <textarea name="description" id="menuDescription" placeholder="Item Description" required></textarea>
+
+        <input type="number" name="price" id="menuPrice" placeholder="Price (PHP)" required>
+
+        <select name="category" id="menuCategory">
+            <option value="Specialty Coffee">Specialty Coffee</option>
+            <option value="Pastries">Pastries</option>
+            <option value="Snacks">Snacks</option>
         </select>
+
+        <input type="file" name="image" id="menuImage" accept="image/*" required>
+
         <button type="submit">Add Item</button>
       </form>
+
+     <!-- Image Preview -->
+      <img id="previewImage" src="" style="width:120px; margin-top:10px; display:none;">
+
+
+
       <ul id="menuList"></ul>
     </section>
 

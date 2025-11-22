@@ -109,6 +109,10 @@ body {
   gap: 1rem;
 }
 
+.logout{
+ margin-right: -25rem;
+}
+
 #themeToggle {
   background: transparent;
   color: #c49b63;
@@ -137,6 +141,16 @@ body.light-theme #themeToggle:hover {
   color: #c49b63;
 }
 
+textarea {
+  background: transparent;
+  border: 1px solid #c49b63;
+  color: #fff;
+  padding: 0.7rem;
+  width: 100%;
+  resize: none;
+  height: 6rem;
+}
+
 /* ===== LIGHT THEME STYLES ===== */
 body.light-theme {
   background-color: #f7f3f1;
@@ -159,9 +173,11 @@ body.light-theme #logoutBtn {
   color: #fff;
 }
 
-.logout{
-  margin-left: 65rem;
+body.light-theme textarea {
+  background: #fff;
+  color: #222;
 }
+
 
 /* Tabs */
 body.light-theme .tabs .tab {
@@ -203,6 +219,11 @@ body.light-theme .action-btn {
 body.light-theme .approve { color: #00b050; }
 body.light-theme .decline { color: #d32f2f; }
 body.light-theme .archive { color: #ff9800; }
+
+#previewImage {
+  border-radius: 8px;
+  border: 1px solid #c49b63;
+}
 
 /* ===== THEME TOGGLE BUTTON ===== */
 #themeToggle {

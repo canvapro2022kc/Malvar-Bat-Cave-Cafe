@@ -1,28 +1,25 @@
-// admin-key.js
-let keySequence = []; // store the recent keys pressed
-const SECRET_COMBO = ['.', '*']; // the sequence to trigger admin key prompt
-const ADMIN_KEY = "malvar-admin-2025"; // your secret access key
+// admin-key.js (Option 1: secret combo → login page)
+let keySequence = []; 
+const SECRET_COMBO = ['K', '2'];  
+const ACCESS_PHRASE = "malvar-admin-2025"; 
 
 document.addEventListener("keydown", (e) => {
-  const key = e.key;
-
-  // Record pressed key, keep only last 2
-  keySequence.push(key);
+  keySequence.push(e.key);
   if (keySequence.length > 2) keySequence.shift();
 
-  // Check if the last 2 keys match the combo
+  console.log("Pressed:", keySequence.join(""));
+
   if (keySequence.join('') === SECRET_COMBO.join('')) {
     e.preventDefault();
-    const keyInput = prompt("Enter Admin Access Key:");
+    
+    const input = prompt("Enter Admin Access Phrase:");
 
-    if (keyInput === ADMIN_KEY) {
-      alert("Admin access granted.");
-      window.location.href = "admin.php";
-    } else if (keyInput) {
-      alert("Invalid key. Access denied.");
+    if (input === ACCESS_PHRASE) {
+      window.location.href = "admin.php"; // GO TO LOGIN PAGE
+    } else if (input) {
+      alert("Invalid admin phrase.");
     }
-
-    // Clear sequence after attempt
     keySequence = [];
   }
+
 });

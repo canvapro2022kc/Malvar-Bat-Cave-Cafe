@@ -75,7 +75,7 @@ $error = "";
             Whether you're here for relaxation or a quick bite, we've got you covered.
           </p>
           <a href="reserve.php"><button type="button" class="menu-btn reserve-btn">Reserve Now</button></a>
-          <a href="menupage.php"><button type="button" class="banner-btn banner-btn-2">
+          <a href="menu.php"><button type="button" class="banner-btn banner-btn-2">
             VIEW MENU
           </button></a>
         </div>
@@ -158,7 +158,7 @@ $error = "";
             Explore our wide selection of beverages, snacks, and pastries made to delight 
             your taste buds. Discover our full menu and find your new favorite treat today.
           </p>
-          <a href="menupage.php"><button type="button" class="menu-btn">View Full Menu</button></a>
+          <a href="menu.php"><button type="button" class="menu-btn">View Full Menu</button></a>
         </div>
         <div class="menu-right">
           <div class="menu-right-images">
