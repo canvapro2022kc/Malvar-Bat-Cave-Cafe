@@ -96,22 +96,22 @@ $error = "";
           <div class="details">
             <i class="fa-solid fa-phone"></i>
             <div>
-              <p style="font-size: medium; color:#c49b63;">(+63)9214750148 </p> 
-              <p style="font-size: 14px; color: rgb(145,145,145)">Nina Sy</p>
+              <p class="detail-main-info">(+63)9214750148</p> 
+              <p class="detail-sub-info">Nina Sy</p>
             </div>
           </div>
           <div class="details">
             <i class="fa-solid fa-location-dot"></i>
             <div class="location">
-              <p style="font-size: medium; color: #c49b63;"> Malvar</p>
-              <p style="font-size: 14px; color: rgb(145, 145, 145)">Batangas State University Area</p>
+              <p class="detail-main-info">Malvar</p>
+              <p class="detail-sub-info">Batangas State University Area</p>
             </div>
           </div>
           <div class="details">
             <i class="fa-solid fa-clock"></i>
             <div>
-              <p style="font-size: medium; color: #c49b63;">Open Monday-Friday</p>
-              <p style="font-size: 14px; color: rgb(145, 145, 145)">1:00pm - 1:00am</p>
+              <p class="detail-main-info">Open Monday-Friday</p>
+              <p class="detail-sub-info">1:00pm - 1:00am</p>
             </div>
           </div>
         </div>
